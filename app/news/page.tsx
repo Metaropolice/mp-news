@@ -20,12 +20,13 @@ export default function NewsPage() {
   }, [])
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col items-center py-10 px-4">
-      <div className="w-full max-w-3xl border border-white rounded-md p-6">
+    <div className="bg-transparent min-h-screen flex flex-col items-center py-10 px-4">
+      {/* 中のボックスだけ黒背景 */}
+      <div className="bg-black text-white w-full max-w-3xl rounded-md p-6">
         <h2 className="text-xl font-bold mb-4">新着情報</h2>
         <ul className="space-y-4">
           {posts.map((post, i) => {
-            const isNew = i === 0 // 1番目だけNEW扱い
+            const isNew = i === 0 // 1番目だけNEW表示
             return (
               <li key={post.id} className="border-t border-gray-600 pt-2">
                 <a
@@ -55,14 +56,17 @@ export default function NewsPage() {
             )
           })}
         </ul>
-      </div>
 
-      <a
-        href="/news"
-        className="mt-8 inline-block border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition"
-      >
-        お知らせ一覧
-      </a>
+        {/* お知らせ一覧ボタン */}
+        <a
+          href="https://mp-inc.net/news/"
+          className="mt-8 inline-block border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          お知らせ一覧
+        </a>
+      </div>
     </div>
   )
 }
