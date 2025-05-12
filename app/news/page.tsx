@@ -20,7 +20,7 @@ export default function NewsPage() {
   }, [])
 
   return (
-    <div className="bg-transparent min-h-screen flex flex-col items-center py-10 px-4">
+    <div className="bg-transparent min-h-screen flex flex-col items-center py-4 px-4">
       {/* 中のボックスだけ黒背景 */}
       <div className="bg-transparent text-white w-full max-w-5xl border border-white rounded-lg p-6">
         <h2 className="text-xl font-bold mb-4">新着情報</h2>
